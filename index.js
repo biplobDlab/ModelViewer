@@ -1,34 +1,42 @@
-const modelViewerTexture1 = document.querySelector("model-viewer");
 
-modelViewerTexture1.addEventListener("load", () => {
 
-  const material = modelViewerTexture1.model.materials[0];
+// async function exportGLB()
+// {
+//   const modelViewer = document.getElementById("model-viewer");
+//   const glTF = await modelViewer.exportScene();
+//   modelViewerTexture1.model = glTF;
+// }
 
-  const createAndApplyTexture = async (channel, value) => {
-    const texture = await modelViewerTexture1.createTexture(value);
-    if (channel.includes('base') || channel.includes('metallic')) {
-      material.pbrMetallicRoughness[channel].setTexture(texture);
-    } else {
-      material[channel].setTexture(texture);
-    }
-  }
-  const highlightedItems = document.querySelectorAll(".texture-button");
+// const modelViewerTexture1 = document.querySelector("model-viewer");
 
-  highlightedItems.forEach((texture_button) => {
-    texture_button.addEventListener('click', (event) => {
-      createAndApplyTexture('baseColorTexture',texture_button.value);
-    });
-  });
+// modelViewerTexture1.addEventListener("load", () => {
 
-  const buttons = document.querySelectorAll(".arbutton");
-  buttons.forEach((ar_button) => {
-    ar_button.addEventListener('click', (event) => {
-      //modelViewerTexture1.getElementById("ar-button").click();
-      console.log(modelViewerTexture1);
-    });
-  });
-  createAndApplyTexture('baseColorTexture', document.getElementById('texture-green-orange1').value);
-});
+//   const material = modelViewerTexture1.model.materials[0];
+
+//   const createAndApplyTexture = async (channel, value) => {
+//     const texture = await modelViewerTexture1.createTexture(value);
+//     if (channel.includes('base') || channel.includes('metallic')) {
+//       material.pbrMetallicRoughness[channel].setTexture(texture);
+//     } else {
+//       material[channel].setTexture(texture);
+//     }
+//   }
+//   const highlightedItems = document.querySelectorAll(".texture-button");
+
+//   highlightedItems.forEach((texture_button) => {
+//     texture_button.addEventListener('click', (event) => {
+//       createAndApplyTexture('baseColorTexture',texture_button.value);
+//     });
+//   });
+
+//   //const buttons = document.querySelectorAll(".arbutton");
+//   // buttons.forEach((ar_button) => {
+//   //   ar_button.addEventListener('click', (event) => {
+//   //     //modelViewerTexture1.getElementById("ar-button").click();
+//   //   });
+//   // });
+//   createAndApplyTexture('baseColorTexture', document.getElementById('texture-green-orange1').value);
+// });
 
 
 function displeCheck(e) {
@@ -55,3 +63,11 @@ function displeCheck(e) {
   }
   
 }
+
+const highlightedItems = document.querySelectorAll(".texture-button");
+
+  highlightedItems.forEach((texture_button) => {
+    texture_button.addEventListener('click', (event) => {
+      document.getElementById("model-viewer").src = texture_button.value;
+    });
+  });
