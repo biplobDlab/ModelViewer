@@ -1,26 +1,10 @@
 
 const modelViewerTexture1 = document.querySelector("model-viewer");
-// var pathList = [];
-// async function exportGLB()
-// {
-//   const modelViewer = document.getElementById("model-viewer");
-//   const glTF = await modelViewer.exportScene();
-//   const file = new File([glTF], "export.glb");
-//   var path =  URL.createObjectURL(file);
-//   if(!pathList.includes(path))
-//   {
-//     pathList.push(path);
-//   }
-//   document.getElementById("model-viewer").src = path;
-//   console.log(path);
-//   console.log(pathList);
-//   //return glTF;
-// }
+
 
 modelViewerTexture1.addEventListener("load", () => {
 
-  console.log(modelViewerTexture1.availableVariants);
-  const material = modelViewerTexture1.model.materials[0];
+  const material = modelViewerTexture1.model.materials[2];
 
   const createAndApplyTexture = async (channel, value) => {
     const texture = await modelViewerTexture1.createTexture(value);
@@ -36,28 +20,35 @@ modelViewerTexture1.addEventListener("load", () => {
     texture_button.addEventListener('click', (event) => {
       createAndApplyTexture('baseColorTexture', texture_button.getAttribute("texture_value"));
     });
-
-    
-
   });
 
   const arbuttons = document.getElementById("color-controls");
-    var arbutton = document.getElementById("ar_button");
-    document.getElementById("ar_button").addEventListener('click', (event) => {
+  var arbutton = document.getElementById("ar-button");
+  document.getElementById("ar-button").addEventListener('click', (event) => {
       arbuttons.style.display = 'block';
+      arbutton.style.display = 'none';
     });
 
-    arbutton.addEventListener('DOMAttrModified', function () {
+  arbutton.addEventListener('DOMAttrModified', function () {
       if (e.attrName == 'style') {
-        arbuttons.style.display = 'none';
+        if(e.style.display =='block')
+        {
+          arbuttons.style.display = 'none';
+        }
+        else
+        {
+          arbuttons.style.display = 'none';
+        }
       }
     }, false);
-  //const buttons = document.querySelectorAll(".arbutton");
-  // buttons.forEach((ar_button) => {
-  //   ar_button.addEventListener('click', (event) => {
-  //     //modelViewerTexture1.getElementById("ar-button").click();
-  //   });
-  // });
+
+
+  const buttons = document.querySelectorAll(".arbutton");
+  buttons.forEach((ar_button) => {
+    ar_button.addEventListener('click', (event) => {
+      //modelViewerTexture1.getElementById("ar-button").click();
+    });
+  });
   createAndApplyTexture('baseColorTexture', document.getElementById('texture-green-orange1').getAttribute("texture_value"));
 });
 
@@ -88,16 +79,21 @@ function displeCheck(e) {
 
 }
 
-// const highlightedItems = document.querySelectorAll(".texture-button");
 
 // highlightedItems.forEach((texture_button) => {
-//     texture_button.addEventListener('click', (event) => {
-//       document.getElementById("model-viewer").src = texture_button.value;
-//     });
-//   });
-  // const buttons = document.querySelectorAll(".arbutton");
-  // buttons.forEach((ar_button) => {
-  //   ar_button.addEventListener('click', (event) => {
-  //     exportGLB();
-  //   });
-  // });
+  //     texture_button.addEventListener('click', (event) => {
+    //       document.getElementById("model-viewer").src = texture_button.value;
+    //     });
+    //   });
+    // const buttons = document.querySelectorAll(".arbutton");
+    // buttons.forEach((ar_button) => {
+      //   ar_button.addEventListener('click', (event) => {
+        //     exportGLB();
+        //   });
+        // });
+        
+
+
+
+
+

@@ -14,8 +14,9 @@
   <!-- Import the component -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer@0.3.1/dist/model-viewer-legacy.js">
-  </script>
 
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 
 
@@ -56,18 +57,18 @@
           <div class="d-flex d-md-block ">
 
             <button id="texture-green-orange2" class="texture-green-orange texture-button green-orange" type="button"
-              onclick="displeCheck(this)" value="models/Cubemodel1.glb" texture_value="BodyPaint_ABS_BaseColor_V1.png">
-              <img src="Check.png" style="opacity: 1;" id="texture-green-orange2-child">
+              onclick="displeCheck(this)" value="models/Cubemodel1.glb" texture_value="./images/BodyPaint_D_V2.png">
+              <img src="./images/Check.png" style="opacity: 1;" id="texture-green-orange2-child">
               <!-- <i class="fa-1x fa-check" style="color:white; display: block;" id="texture-green-orange2-child"></i> -->
             </button>
             <button id="texture-yellow-blue2" class="texture-yellow-blue texture-button yellow-blue" type="button"
-              onclick="displeCheck(this)" value="models/Cubemodel2.glb" texture_value="BodyPaint_ABS_BaseColor_V2.png">
-              <img src="Check.png" style="opacity: 0;" id="texture-yellow-blue2-child">
+              onclick="displeCheck(this)" value="models/Cubemodel2.glb" texture_value="./images/BodyPaint_D_V3.png">
+              <img src="./images/Check.png" style="opacity: 0;" id="texture-yellow-blue2-child">
               <!-- <i class="fa-1x fa-check" style="color:white; display: none;"id="texture-yellow-blue2-child"></i> -->
             </button>
             <button id="texture-red-purple2" class="texture-red-purple texture-button red-purpl" type="button"
-              onclick="displeCheck(this)" value="models/Cubemodel3.glb" texture_value="BodyPaint_ABS_BaseColor_V3.png">
-              <img src="Check.png" style="opacity: 0;" id="texture-red-purple2-child">
+              onclick="displeCheck(this)" value="models/Cubemodel3.glb" texture_value="./images/BodyPaint_D_V1.png">
+              <img src="./images/Check.png" style="opacity: 0;" id="texture-red-purple2-child">
               <!-- <i class="fa-1x fa-check" style="color:white; display: none;"id="texture-red-purple2-child"></i> -->
             </button>
           </div>
@@ -94,12 +95,39 @@
         <!-- <iframe title="Sketchfab Viewer" src="" id="api-frame" class="modelviewer" aria-placeholder="model window">
         </iframe> -->
         <!-- Use it like any other HTML element -->
-        <model-viewer id="model-viewer" alt="Suzuki buike" src="models/CubeModel.glb" ar environment-image=""
+        <model-viewer id="model-viewer" src="./models/Suzuki_Gixxer_SF_2022_ABS.glb" class="modelviewer" ar
+          ar-modes="webxr scene-viewer quick-look" camera-controls poster="./images/poster.webp" shadow-intensity="2"
+          environment-image="Studio.hdr" exposure="2" shadow-softness="1" min-camera-orbit="auto 0deg 3.743m" max-
+          camera-orbit="auto 90deg auto" min-field-of-view="22.98deg" camera-orbit="787.7deg 88.48deg auto" auto-rotate>
+
+          <!-- <model-viewer id="model-viewer" alt="Suzuki buike" src="models/Suzuki_Gixxer_SF_2022_ABS.glb" ar environment-image=""
           poster="webp/poster.webp" shadow-intensity="1" camera-controls touch-action="pan-y"
-          class="modelviewer" ar-placement>
-          <button slot="ar-button" id="ar_button" class="ar-button">
+          class="modelviewer" ar-placement> -->
+
+
+          <div class=" d-flex justify-content-center w-100 controls d-lg-none" ,="" id="color-controls"
+            style="display: block;">
+            <div class="d-flex mt-3 mb-3">
+              <button id="texture-green-orange3" class="texture-green-orange texture-button green-orange" type="button"
+                onclick="displeCheck(this)" value="models/Cubemodel1.glb" texture_value="./images/BodyPaint_D_V2.png">
+                <img src="./images/Check.png" style="opacity: 1;" id="texture-green-orange3-child">
+                <!-- <i class="fa-1x fa-check" style="color:white; display: block;" id="texture-green-orange2-child"></i> -->
+              </button>
+              <button id="texture-yellow-blue3" class="texture-yellow-blue texture-button yellow-blue" type="button"
+                onclick="displeCheck(this)" value="models/Cubemodel2.glb" texture_value="./images/BodyPaint_D_V3.png">
+                <img src="./images/Check.png" style="opacity: 0;" id="texture-yellow-blue3-child">
+                <!-- <i class="fa-1x fa-check" style="color:white; display: none;"id="texture-yellow-blue2-child"></i> -->
+              </button>
+              <button id="texture-red-purple3" class="texture-red-purple texture-button red-purpl" type="button"
+                onclick="displeCheck(this)" value="models/Cubemodel3.glb" texture_value="./images/BodyPaint_D_V1.png">
+                <img src="./images/Check.png" style="opacity: 0;" id="texture-red-purple3-child">
+                <!-- <i class="fa-1x fa-check" style="color:white; display: none;"id="texture-red-purple2-child"></i> -->
+              </button>
+            </div>
+          </div>
+          <button slot="ar-button" id="ar-button" class="ar-button">
             <a id="default-ar-button" part="default-ar-button" class="fab" tabindex="2" aria-label="View in your space">
-              <!--?lit$778535873$-->
+
               <svg version="1.1" id="view_x5F_in_x5F_AR_x5F_icon" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px"
                 viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
@@ -119,54 +147,31 @@
               </svg>
             </a>
           </button>
-
-          <div class="controls" ,="" id="color-controls" style="display: none;">
-            <div class="d-flex mt-3 mb-3">
-
-              <button id="texture-green-orange3" class="texture-green-orange texture-button green-orange" type="button"
-                onclick="displeCheck(this)" value="models/Cubemodel1.glb"
-                texture_value="BodyPaint_ABS_BaseColor_V1.png">
-                <img src="Check.png" style="opacity: 1;" id="texture-green-orange3-child">
-                <!-- <i class="fa-1x fa-check" style="color:white; display: block;" id="texture-green-orange2-child"></i> -->
-              </button>
-              <button id="texture-yellow-blue3" class="texture-yellow-blue texture-button yellow-blue" type="button"
-                onclick="displeCheck(this)" value="models/Cubemodel2.glb"
-                texture_value="BodyPaint_ABS_BaseColor_V2.png">
-                <img src="Check.png" style="opacity: 0;" id="texture-yellow-blue3-child">
-                <!-- <i class="fa-1x fa-check" style="color:white; display: none;"id="texture-yellow-blue2-child"></i> -->
-              </button>
-              <button id="texture-red-purple3" class="texture-red-purple texture-button red-purpl" type="button"
-                onclick="displeCheck(this)" value="models/Cubemodel3.glb"
-                texture_value="BodyPaint_ABS_BaseColor_V3.png">
-                <img src="Check.png" style="opacity: 0;" id="texture-red-purple3-child">
-                <!-- <i class="fa-1x fa-check" style="color:white; display: none;"id="texture-red-purple2-child"></i> -->
-              </button>
-            </div>
-          </div>
         </model-viewer>
         <!-- Tab view buttons -->
         <div class="row d-lg-none d-md-block mt-3">
           <!-- Collor selector -->
           <div class="col-12">
-            <div class="row pt-3">
+            <div class="row pt-3 d-none">
               <div class="d-flex justify-content-center">
                 <button id="texture-green-orange1" class="texture-green-orange texture-button  btn-info" type="button"
-                  onclick="displeCheck(this)" value="models/Cubemodel1.glb"
-                  texture_value="BodyPaint_ABS_BaseColor_V1.png">
-                  <img src="Check.png" height="30px" width="30px" style="opacity: 1;" id="texture-green-orange1-child">
+                  onclick="displeCheck(this)" value="models/Cubemodel1.glb" texture_value="./images/BodyPaint_D_V2.png">
+                  <img src="./images/Check.png" height="30px" width="30px" style="opacity: 1;"
+                    id="texture-green-orange1-child">
                   <!-- <i class="fa fa-check" id="texture-green-orange1-child" style="font-size:20px;color:white; display:block"></i> -->
                 </button>
                 <button id="texture-yellow-blue1" class="texture-yellow-blue 
                 texture-button  btn-secondary" type="button" onclick="displeCheck(this)" value="models/Cubemodel2.glb"
-                  texture_value="BodyPaint_ABS_BaseColor_V2.png">
-                  <img src="Check.png" height="30px" width="30px" style="opacity: 0;" id="texture-yellow-blue1-child">
+                  texture_value="./images/BodyPaint_D_V3.png">
+                  <img src="./images/Check.png" height="30px" width="30px" style="opacity: 0;"
+                    id="texture-yellow-blue1-child">
                   <!-- <i class="fa fa-check" id="texture-yellow-blue1-child" style="font-size:20px;color:white; display:none "></i> -->
                 </button>
 
                 <button id="texture-red-purple1" class="texture-red-purple texture-button  btn-danger" type="button"
-                  onclick="displeCheck(this)" value="models/Cubemodel3.glb"
-                  texture_value="BodyPaint_ABS_BaseColor_V3.png">
-                  <img src="Check.png" height="30px" width="30px" style="opacity: 0;" id="texture-red-purple1-child">
+                  onclick="displeCheck(this)" value="models/Cubemodel3.glb" texture_value="./images/BodyPaint_D_V1.png">
+                  <img src="./images/Check.png" height="30px" width="30px" style="opacity: 0;"
+                    id="texture-red-purple1-child">
                   <!-- <i class="fa fa-check" id="texture-red-purple1-child" style="font-size:20px;color:white; display:none"></i> -->
                 </button>
               </div>
@@ -195,8 +200,6 @@
               </div>
             </div>
           </div>
-
-
         </div>
 
       </div>
