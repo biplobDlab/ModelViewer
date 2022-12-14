@@ -31,7 +31,7 @@
 
 <body>
   <div class="fullFrameContainer">
-    <div class="d-flex">
+    <div class="d-flex justify-content-between">
       <!-- Collors view -->
       <div class="controlviewer d-sm-none d-md-none d-lg-block col-xl-3 col-xl-3 col-lg-4 pt-xl-5 pt-lg-1 px-5">
         <div class="row text-center pt-xl-3 pt-lg-3">
@@ -78,17 +78,17 @@
         </div>
 
         <!-- animation toggle button -->
-        <div class="d-flex justify-content-start text-centerpr-3 pt-xl-5 pt-lg-4">
+        <!-- <div class="d-flex justify-content-start text-centerpr-3 pt-xl-5 pt-lg-4">
           <button class=" btn bg-light arbutton">
             <p class="animatonTitel">View in AR</p>
-            <!-- <div class="d-flex justify-content-center p-1 d-none">
+              <div class="d-flex justify-content-center p-1 d-none">
               <label class="switch">
                 <input id="toggle" type="checkbox" value="true" checked>
                 <span class="toggle slider round"></span>
               </label>
-            </div> -->
+            </div>
           </button>
-        </div>
+        </div> -->
 
       </div>
 
@@ -97,10 +97,34 @@
         <p class="text-center title d-xxl-none d-xl-none d-lg-none d-md-block d-sm-block">Configurator</p>
         <!-- <iframe title="Sketchfab Viewer" src="" id="api-frame" class="modelviewer" aria-placeholder="model window">
         </iframe> -->
-        <!-- Use it like any other HTML element -->
+<!-- Use it like any other HTML element -->
         <model-viewer id="model-viewer" alt="Suzuki buike" src="models/CubeModel.glb" ar environment-image=""
-          poster="webp/poster.webp" shadow-intensity="1" camera-controls touch-action="pan-y" class="modelviewer" ar-placement>
+          poster="webp/poster.webp" shadow-intensity="1" camera-controls touch-action="pan-y" class="modelviewer justify-content-end" ar-placement>
           <!-- <button slot="ar-button" style="display: none;"></button> -->
+          
+          <div class="controls d-none d-flex justify-content-center" ,="" id="color-controls">
+            <div class="d-flex mt-3 mb-3">
+
+              <button id="texture-green-orange3" class="texture-green-orange texture-button green-orange" type="button"
+                onclick="displeCheck(this)"
+                value="models/Cubemodel1.glb" texture_value = "BodyPaint_ABS_BaseColor_V1.png">
+                <img src="Check.png" style="opacity: 1;" id="texture-green-orange3-child">
+                <!-- <i class="fa-1x fa-check" style="color:white; display: block;" id="texture-green-orange2-child"></i> -->
+              </button>
+              <button id="texture-yellow-blue3" class="texture-yellow-blue texture-button yellow-blue" type="button"
+                onclick="displeCheck(this)"
+                value="models/Cubemodel2.glb" texture_value = "BodyPaint_ABS_BaseColor_V2.png">
+                <img src="Check.png" style="opacity: 0;" id="texture-yellow-blue3-child">
+                <!-- <i class="fa-1x fa-check" style="color:white; display: none;"id="texture-yellow-blue2-child"></i> -->
+              </button>
+              <button id="texture-red-purple3" class="texture-red-purple texture-button red-purpl" type="button"
+                onclick="displeCheck(this)"
+                value="models/Cubemodel3.glb" texture_value = "BodyPaint_ABS_BaseColor_V3.png">
+                <img src="Check.png" style="opacity: 0;" id="texture-red-purple3-child">
+                <!-- <i class="fa-1x fa-check" style="color:white; display: none;"id="texture-red-purple2-child"></i> -->
+              </button>
+            </div>
+          </div>
         </model-viewer>
         <!-- Tab view buttons -->
         <div class="row d-lg-none d-md-block mt-3">
@@ -131,20 +155,20 @@
                 </button>
               </div>
             </div>
-            <div class="row mt-4">
-              <!-- animation toggle button -->
+            <!-- <div class="row mt-4">
+               animation toggle button
               <div class="d-flex justify-content-center text-center pr-3 pt-xl-5 pt-lg-4">
                 <button class="btn bg-light arbutton">
                   <p class="animatonTitel">View in AR</p>
-                  <!-- <div class="d-flex justify-content-start p-1 d-none">
+                  <div class="d-flex justify-content-start p-1 d-none">
                     <label class="switch">
                       <input id="toggle" type="checkbox" value="true" checked>
                       <span class="toggle slider round"></span>
                     </label>
-                  </div> -->
+                  </div> 
                 </button>
               </div>
-            </div>
+            </div> -->
             <div class="row text-left px-md-5 pt-md-2">
               <div class="row">
                 <p class="subTitle">Suxuki Bike</p>

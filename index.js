@@ -1,6 +1,4 @@
 
-
-
 const modelViewerTexture1 = document.querySelector("model-viewer");
 // var pathList = [];
 // async function exportGLB()
@@ -66,6 +64,7 @@ function displeCheck(e) {
       document.getElementById(text + "1-child").style.opacity = 1;
 
       document.getElementById(text + "2-child").style.opacity = 1;
+      document.getElementById(text + "3-child").style.opacity = 1;
 
     }
     else {

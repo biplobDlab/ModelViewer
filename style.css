@@ -1,8 +1,10 @@
 .fullFrameContainer {
+  background-color: #131B26;
   width: 100%;
   height: unset;
   aspect-ratio: 22/9;
   font-family: 'Encode Sans';
+  padding-bottom: 30px;
 }
 
 .modelviewer {
