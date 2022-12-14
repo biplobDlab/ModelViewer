@@ -22,33 +22,33 @@ modelViewerTexture1.addEventListener("load", () => {
     });
   });
 
-  const arbuttons = document.getElementById("color-controls");
-  var arbutton = document.getElementById("ar-button");
-  document.getElementById("ar-button").addEventListener('click', (event) => {
-      arbuttons.style.display = 'block';
-      arbutton.style.display = 'none';
-    });
+  // const arbuttons = document.getElementById("color-controls");
+  // var arbutton = document.getElementById("ar-button");
+  // document.getElementById("ar-button").addEventListener('click', (event) => {
+  //     arbuttons.style.display = 'block';
+  //     arbutton.style.display = 'none';
+  //   });
 
-  arbutton.addEventListener('DOMAttrModified', function () {
-      if (e.attrName == 'style') {
-        if(e.style.display =='block')
-        {
-          arbuttons.style.display = 'none';
-        }
-        else
-        {
-          arbuttons.style.display = 'none';
-        }
-      }
-    }, false);
+  // arbutton.addEventListener('DOMAttrModified', function () {
+  //     if (e.attrName == 'style') {
+  //       if(e.style.display =='block')
+  //       {
+  //         arbuttons.style.display = 'none';
+  //       }
+  //       else
+  //       {
+  //         arbuttons.style.display = 'none';
+  //       }
+  //     }
+  //   }, false);
 
 
-  const buttons = document.querySelectorAll(".arbutton");
-  buttons.forEach((ar_button) => {
-    ar_button.addEventListener('click', (event) => {
-      //modelViewerTexture1.getElementById("ar-button").click();
-    });
-  });
+  // const buttons = document.querySelectorAll(".arbutton");
+  // buttons.forEach((ar_button) => {
+  //   ar_button.addEventListener('click', (event) => {
+  //     //modelViewerTexture1.getElementById("ar-button").click();
+  //   });
+  // });
   createAndApplyTexture('baseColorTexture', document.getElementById('texture-green-orange1').getAttribute("texture_value"));
 });
 
