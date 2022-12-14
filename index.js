@@ -37,26 +37,21 @@ modelViewerTexture1.addEventListener("load", () => {
       createAndApplyTexture('baseColorTexture', texture_button.getAttribute("texture_value"));
     });
 
-    const arbuttons = document.getElementById("color-controls");
-    const arbutton = document.getElementById("ar_button");
+    
+
+  });
+
+  const arbuttons = document.getElementById("color-controls");
+    var arbutton = document.getElementById("ar_button");
     document.getElementById("ar_button").addEventListener('click', (event) => {
       arbuttons.style.display = 'block';
     });
 
     arbutton.addEventListener('DOMAttrModified', function () {
       if (e.attrName == 'style') {
-        if(e.style.display === 'none'){  
-          arbuttons.style.display = 'block';
-        }
-        else{
-          arbuttons.style.display = 'none';
-
-        }
+        arbuttons.style.display = 'none';
       }
     }, false);
-
-  });
-
   //const buttons = document.querySelectorAll(".arbutton");
   // buttons.forEach((ar_button) => {
   //   ar_button.addEventListener('click', (event) => {
