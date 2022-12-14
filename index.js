@@ -22,7 +22,7 @@ modelViewerTexture1.addEventListener("load", () => {
     });
   });
 
-  // const arbuttons = document.getElementById("color-controls");
+  
   // var arbutton = document.getElementById("ar-button");
   // document.getElementById("ar-button").addEventListener('click', (event) => {
   //     arbuttons.style.display = 'block';

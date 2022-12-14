@@ -15,6 +15,7 @@
 .controls{
   position: absolute;
   bottom: 0px;
+  width: 60%;
 }
 
 .controlviewer {
@@ -306,5 +307,9 @@
     display: none;
   }
 
-  
+  .controls{
+    position: absolute;
+    bottom: 0px;
+    width: 70%;
+  }
 }
