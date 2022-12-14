@@ -41,8 +41,20 @@ modelViewerTexture1.addEventListener("load", () => {
     const arbutton = document.getElementById("ar_button");
     document.getElementById("ar_button").addEventListener('click', (event) => {
       arbuttons.style.display = 'block';
-      console.log("AR Click");
     });
+
+    arbutton.addEventListener('DOMAttrModified', function () {
+      if (e.attrName == 'style') {
+        if(e.style.display === 'none'){  
+          arbuttons.style.display = 'block';
+        }
+        else{
+          arbuttons.style.display = 'none';
+
+        }
+      }
+    }, false);
+
   });
 
   //const buttons = document.querySelectorAll(".arbutton");
