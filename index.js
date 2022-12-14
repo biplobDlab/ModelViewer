@@ -33,8 +33,15 @@ modelViewerTexture1.addEventListener("load", () => {
   const highlightedItems = document.querySelectorAll(".texture-button");
 
   highlightedItems.forEach((texture_button) => {
-    texture_button.addEventListener('click', (event) => {      
-      createAndApplyTexture('baseColorTexture',texture_button.getAttribute("texture_value"));
+    texture_button.addEventListener('click', (event) => {
+      createAndApplyTexture('baseColorTexture', texture_button.getAttribute("texture_value"));
+    });
+
+    const arbuttons = document.getElementById("color-controls");
+    const arbutton = document.getElementById("ar_button");
+    document.getElementById("ar_button").addEventListener('click', (event) => {
+      arbuttons.style.display = 'block';
+      console.log("AR Click");
     });
   });
 
@@ -71,7 +78,7 @@ function displeCheck(e) {
       document.getElementById(buttons[j].id + "-child").style.opacity = 0;
     }
   }
-  
+
 }
 
 // const highlightedItems = document.querySelectorAll(".texture-button");
