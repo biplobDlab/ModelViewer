@@ -12,6 +12,9 @@
   width: 100%;
   aspect-ratio: 16/10;
 }
+.controls{
+  margin-top: 80%;  
+}
 
 .controlviewer {
   background-color: #131B26;

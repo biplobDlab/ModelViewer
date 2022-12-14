@@ -58763,13 +58763,15 @@ const ARMixin = (ModelViewerElement)=>{
           switch (this[$arMode]) {
           case ARMode.QUICK_LOOK:
               this[$openIOSARQuickLook]();
-              
+              console.log("QUICK_LOOK");
               break;
           case ARMode.WEBXR:
               await this[$enterARWithWebXR]();
+              console.log("WEBXR");
               break;
           case ARMode.SCENE_VIEWER:
               this[$openSceneViewer]();
+              console.log("SCENE_VIEWER");
               break;
           default:
               console.warn('No AR Mode can be activated. This is probably due to missing \
