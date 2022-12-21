@@ -1,10 +1,11 @@
 .fullFrameContainer {
   background-color: #131B26;
   width: 100%;
-  height: unset;
-  aspect-ratio: 22/9;
+  height: fit-content;
+  aspect-ratio: 22/11;
   font-family: 'Encode Sans';
   padding-bottom: 30px;
+
 }
 
 .modelviewer {
@@ -19,6 +20,7 @@
 }
 
 .controlviewer {
+  overflow: hidden;
   background-color: #131B26;
 }
 
@@ -145,6 +147,7 @@
   /* start of large tablet styles */
   .fullFrameContainer {
     background-color: #131B26;
+  height: fit-content;
   }
 
   .modelviewer {
@@ -182,8 +185,9 @@
 
   /* start of large tablet styles */
   .fullFrameContainer {
-    aspect-ratio: 4/5;
-    background-color: #131B26;
+    /*aspect-ratio: 4/5;*/
+    background-color: #131B26;    
+    height: fit-content;
   }
 
   .modelviewer {
@@ -223,7 +227,8 @@
 
   /* start of medium tablet styles */
   .fullFrameContainer {
-    aspect-ratio: 3/4;
+    /*aspect-ratio: 3/4;*/  
+    height: fit-content;
     background-color: #131B26;
   }
 
