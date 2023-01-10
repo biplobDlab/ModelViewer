@@ -6,6 +6,10 @@
   font-family: Reload_normal;
   src:url("./reloadalt-bold/Reload\ Alt\ Light.otf");
 }
+html body
+{
+  background-color: #131B26;
+}
 .fullFrameContainer {
   background-color: #131B26;
   width: 100%;
