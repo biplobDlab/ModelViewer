@@ -1,3 +1,6 @@
+$("#model-viewer").bind("contextmenu",function(e){
+  return false;
+});
 
 const modelViewerTexture1 = document.querySelector("model-viewer");
 
@@ -22,7 +25,7 @@ modelViewerTexture1.addEventListener("load", () => {
     });
   });
 
-  
+
   // var arbutton = document.getElementById("ar-button");
   // document.getElementById("ar-button").addEventListener('click', (event) => {
   //     arbuttons.style.display = 'block';
@@ -91,7 +94,7 @@ function displeCheck(e) {
         //     exportGLB();
         //   });
         // });
-        
+
 
 
 
