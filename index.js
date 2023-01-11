@@ -1,12 +1,12 @@
-$("#model-viewer").bind("contextmenu",function(e){
-  return false;
-});
+window.oncontextmenu = function () {
+  $("#model-viewer").attr("camera-target", "-0.0m 0.57m 0.01m");
+}
 
 const modelViewerTexture1 = document.querySelector("model-viewer");
 
 
 modelViewerTexture1.addEventListener("load", () => {
-
+  
   modelViewerTexture1.orientation = `${0}deg ${0}deg ${90}deg`;
   const material = modelViewerTexture1.model.materials[2];
   const createAndApplyTexture = async (channel, value) => {
